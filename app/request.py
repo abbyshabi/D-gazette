@@ -1,25 +1,27 @@
-from .models import source
-from .models import article
-from app import app
+from .models import Sources,Articles
 import urllib.request,json
 import ssl
 
 ssl._create_default_https_context = ssl._create_unverified_context
 
-Sources = source.Sources
+#Sources = source.Sources
 
-# Getting api key
-api_key = app.config['NEWS_API_KEY']
-base_url = app.config['BASE_NEWS_API_URL'] 
-sources_url = app.config['SOURCE_NEWS_URL'] 
+api_key = None
+base_url = None
+source_url = None
 
-def get_sources(category):
+def configure_request(app):
+    api_key = app.config['NEWS_API_KEY']
+    base_url = app.config['BASE_NEWS_API_URL'] 
+    sources_url = app.config['SOURCE_NEWS_URL'] 
+
+def get_sources(source):
     '''
      The get_sources function fetches the various news sources from the API
 
     '''
 
-    get_sources_url = 'https://newsapi.org/v1/sources'.format(source,category, api_key)
+    get_sources_url = 'https://newsapi.org/v1/sources'.format(source,api_key)
     with urllib.request.urlopen(get_sources_url) as url:
         get_sources_data = url.read()
         get_sources_response = json.loads(get_sources_data)
