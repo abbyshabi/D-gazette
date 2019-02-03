@@ -1,16 +1,15 @@
 from flask import render_template,request,redirect,url_for
-from app import app
-from .request import get_sources,get_articles
-from .models import source
-from .models import article
-
+from . import main
+from ..request import get_sources,get_articles
+from ..models import Sources
+from ..models import Articles
 import json
 
 
-Articles= article.Articles
+#Articles= article.Articles
 
 # Views
-@app.route('/')
+@main.route('/')
 def index():
 
     '''
@@ -20,7 +19,7 @@ def index():
     news_sources = get_sources('sources')
     return render_template('index.html',title = title,news_sources = news_sources)
 
-@app.route('/news/<source_id>')
+@main.route('/news/<source_id>')
 def news(source_id):
     '''
     The view page for the news page
