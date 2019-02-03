@@ -11,11 +11,13 @@ Sources = source.Sources
 # Getting api key
 api_key = app.config['NEWS_API_KEY']
 base_url = app.config['BASE_NEWS_API_URL'] 
-#sources_article_api = app.config['SOURCES_ARTICLE_API']
 sources_url = app.config['SOURCE_NEWS_URL'] 
 
 def get_sources(category):
-    """Function to retrieve news sources list from the News api"""
+    '''
+     The get_sources function fetches the various news sources from the API
+
+    '''
 
     get_sources_url = 'https://newsapi.org/v1/sources'.format(source,category, api_key)
     with urllib.request.urlopen(get_sources_url) as url:
@@ -31,10 +33,15 @@ def get_sources(category):
     return sources_results
 
 def process_results(sources_list):
-    """Function that process the results list and transforms them into a list of objects
-    Args: sources_list: A list of dictionaries that contains news sources details
+    '''
+    Function that process the source results list and transforms them into a list of objects
+
+    Args: 
+        sources_list: A list of dictionaries that contains sources details
+    
     Returns:
-    sources_results: a list of news sources objects"""
+        sources_results: a list of sources objects
+    '''
 
     sources_results = []
     for source_item in sources_list:

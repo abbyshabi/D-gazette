@@ -1,13 +1,13 @@
 from flask import render_template,request,redirect,url_for
 from app import app
-from .request import get_sources, get_source_articles
-from .model import source
-from .model import articles
-import requests
+from .request import get_sources
+from .models import source
+from .models import article
+
 import json
 
 
-Articles= articles.Articles
+Articles= article.Articles
 
 # Views
 @app.route('/')
