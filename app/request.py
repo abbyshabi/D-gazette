@@ -76,3 +76,31 @@ def get_articles(source):
             articles_result = process_article_results(articles_result_list)
     return articles_result
 
+def process_article_results(articles_list):
+    '''
+    Function that process the article results list and displays on the html as a list.
+
+    Args: 
+        sources_list: A list of dictionaries that contains sources details
+    
+    Returns:
+        sources_results: a list of sources objects
+    '''
+    articles_result = []
+    source_dictionary = {}
+    for result in articles_list:
+        source_id = result.get['source']['id']
+        author = result.get('author')
+        title = result.get('title')
+        description =result.get('description')
+        urlToImage =result.get('urlToImage')
+        url = result.get('url')
+        publishedAt =result.get('publishedAt')
+
+        if urlToImage:
+            source_object = Sources(source_id,author,title,description,urlToImage,url,publishedAt)
+            articles_result.append(source_object)
+    
+    return articles_result
+
+

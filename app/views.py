@@ -1,6 +1,6 @@
 from flask import render_template,request,redirect,url_for
 from app import app
-from .request import get_sources
+from .request import get_sources,get_articles
 from .models import source
 from .models import article
 
@@ -21,11 +21,9 @@ def index():
     return render_template('index.html',title = title,news_sources = news_sources)
 
 @app.route('/news/<source_id>')
-def source(source_id):
+def news(source_id):
     '''
     The view page for the news page
     '''
-
-    
-    source_and_articles = get_source_articles(source_id)
-    return render_template('news.html', source_and_articles=source_and_articles)
+    news_args = get_articles(id)
+    return render_template('news.html', news=news_args)

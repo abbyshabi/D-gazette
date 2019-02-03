@@ -15,16 +15,14 @@
           </div>
         {% endfor %}
 {% endmacro %}
-{% macro displayArticlesList(news_source_result_list) %}
-        {% for article in news_source_result_list%}
+{% macro displayArticlesList(articles_list) %}
+        {% for article in article_list%}
           <div class="col-sm-6">
             <div class="well" style="height:200px">
               <img src="{{article.urlToImage}}" alt="IMAGE NOT FOUND" style="width:150px;height:150px; float:left">
               <h3 style="margin-top:-10px">{{article.title}}</h3>
               <p style="margin-left:50px">{{ article.description|truncate(100)}}</p>
-              <a href="{{article.url}}">
-                <p>Read more...</p>
-              </a>
+              <a href="{{article.url}}"><p>Continue reading.........</p></a>
               <br>
               <footer style="font-weight:bolder">Published: {{article.date}}</footer>
             </div>
