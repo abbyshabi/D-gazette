@@ -1,0 +1,31 @@
+{% macro displaySourcesList(news_sources) %}
+        {% for source in news_sources %}
+        <link href="https://fonts.googleapis.com/css?family=Fahkwang" rel="stylesheet">
+
+          <div class="col-sm-4">
+            <a href="/articles/{{source.source_id}}">
+              <h3 style="font-weight:bold">{{ source.name}}</h3>
+            </a>
+            <br>
+            <div class="well" style="height:200px">
+                <p style="font-weight:bold">{{ source.description|truncate(200)}}</p>
+            </div>
+          </div>
+        {% endfor %}
+{% endmacro %}
+{% macro displayArticlesList(news_source_result_list) %}
+        {% for article in news_source_result_list%}
+          <div class="col-sm-6">
+            <div class="well" style="height:200px">
+              <img src="{{article.urlToImage}}"alt="IMAGE NOT FOUND" style="width:150px;height:150px; float:left">
+              <h3 style="margin-top:-10px">{{article.title}}</h3>
+              <p style="font-weight:bold;margin-left:50px">{{ article.description|truncate(100)}}</p>
+              <a href="{{article.url}}">
+                <p>Read more...</p>
+              </a>
+              <br>
+              <footer style="font-weight:bolder">Published: {{article.date}}</footer>
+            </div>
+          </div>
+        {% endfor %}
+{% endmacro %}
