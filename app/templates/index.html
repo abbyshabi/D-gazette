@@ -1,0 +1,39 @@
+{% import 'macros.html' as macro%}
+{% extends 'base.html'%}
+{% block content%}
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+<meta charset="utf-8">
+
+<header class="w3-container w3-theme w3-padding" id="myHeader">
+    
+    <div class="w3-center">
+  </header>
+        {% if title %}
+        <title> {{ title }}</title>
+        {% else %}
+        <title> Welcome to Dee-gazette </title>
+        {% endif %}
+       
+        
+ 
+        <!----------News sources------------->
+          <h3> Our various news sources</h3>
+            <ul class="w3-card w3-container" style="margin:30px;">
+                {{macro.displaySourcesList(news_sources)}}
+            </ul>
+       
+
+{% endblock %}
+<script>
+    // Side navigation
+    function w3_open() {
+      var x = document.getElementById("mySidebar");
+      x.style.width = "100%";
+      x.style.fontSize = "40px";
+      x.style.paddingTop = "10%";
+      x.style.display = "block";
+    }
+</script>    
