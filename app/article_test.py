@@ -1,9 +1,9 @@
 import unittest
-from models import source
+from models import article
 
-Sources=source.Sources
+Articles=article.Articles
 
-class SourceTest(unittest.TestCase):
+class ArticleTest(unittest.TestCase):
     '''
     Test class to test the behaviour of the source class
     '''
@@ -11,10 +11,10 @@ class SourceTest(unittest.TestCase):
         '''
         set up method that will run before every test 
         '''
-        self.new_source = Sources(12,'abc','abcdef','ab@ab.com','abc','au')
+        self.new_article = Articles(12,'abc','abcdef','ab@ab.com','abc','au','utl@ue.com')
 
     def test_instance(self):
-        self.assertTrue(isinstance(self.new_source,Sources))
+        self.assertTrue(isinstance(self.new_article,Articles))
 
 if __name__ == '__main__':
     unittest.main()
