@@ -8,14 +8,12 @@
 <meta charset="utf-8">
 
 <header class="w3-container w3-theme w3-padding" id="myHeader">
-    
+ 
+  <title> {{ title }}</title>
+  <link href="{{url_for('static',filename='images/icon.png')}}" rel="icon" type="image/16x16-icon" />
     <div class="w3-center">
   </header>
-        {% if title %}
-        <title> {{ title }}</title>
-        {% else %}
-        <title> Welcome to Dee-gazette </title>
-        {% endif %}
+       
        
         
  

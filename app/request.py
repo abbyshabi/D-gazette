@@ -51,6 +51,7 @@ def process_results(sources_list):
         url = source_item.get('url')
         category = source_item.get('category')
         country = source_item.get('country')
+        
 
         source_object = Sources(id, name, description, url, category,country)
         sources_results.append(source_object)
