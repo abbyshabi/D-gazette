@@ -19,10 +19,11 @@ def index():
     news_sources = get_sources('sources')
     return render_template('index.html',title = title,news_sources = news_sources)
 
-@main.route('/news/<source_id>')
-def news(source_id):
+@main.route('/news/<id>')
+def news(id):
     '''
     The view page for the news page
     '''
     news_args = get_articles(id)
-    return render_template('news.html', news=news_args)
+    highlight_args = 'Route Working!!'
+    return render_template('news.html', highlight_param=highlight_args, news=news_args)

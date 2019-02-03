@@ -13,9 +13,9 @@ class Sources:
 class Articles:
     """Articles class to define the articles object"""
 
-    def __init__(self, source_id, author, title, description, urlToImage, url, publishedAt):
+    def __init__(self, id, author, title, description, urlToImage, url, publishedAt):
 
-        self.source_id = source_id
+        self.id = id
         self.author = author
         self.title = title
         self.description = description

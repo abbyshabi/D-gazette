@@ -60,12 +60,12 @@ def process_results(sources_list):
 
     return sources_results
 
-def get_articles(source):
+def get_articles(id):
     '''
     The get articles function gets the listed articles for a selected source
     '''
 
-    get_articles_url = 'https://newsapi.org/v1/articles?source={}&apiKey={}'.format(source, api_key)
+    get_articles_url = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'.format(id,api_key)
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()
         get_articles_response = json.loads(get_articles_data)
@@ -100,7 +100,7 @@ def process_article_results(articles_list):
         publishedAt =result.get('publishedAt')
 
         if urlToImage:
-            source_object = Sources(source_id,author,title,description,urlToImage,url,publishedAt)
+            source_object = Sources(id,author,title,description,urlToImage,url,publishedAt)
             articles_result.append(source_object)
     
     return articles_result
