@@ -13,8 +13,7 @@ def configure_request(app):
     global api_key,base_url
     api_key = app.config['API_KEY']
     base_url = app.config['API_BASE_URL']
-    #articles_base_url = app.config['NEWS_ARTICLES_API_BASE_URL']
-   # NEWS_ARTICLES_API_BASE_URL = 'https://newsapi.org/v2/everything?language=en&sources={}&apiKey={}'
+   
 
 
 
@@ -75,7 +74,7 @@ def get_articles(id):
     return articles_results
 
 
-def process_article_results(article_list):
+def process_articles_results(article_list):
     """Function that process the results list and transforms them into a list of objects
     Args: articles_list: A list of dictionaries that contains news articles and links
     Returns:

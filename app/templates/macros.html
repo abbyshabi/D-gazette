@@ -1,22 +1,25 @@
-{% macro displaySourcesList(news_sources) %}
-        {% for source in news_sources %}
+{% macro displaySourcesList(sources) %}
+        {% for source in sources %}
    
         <link href="https://fonts.googleapis.com/css?family=Fahkwang" rel="stylesheet">
         
           <div class="col-sm-4">
-            <a href="/articles/{{source.source_id}}">
-              <h3 style="font-weight:bold">{{ source.name}}</h3>
+              <h3 ><b>{{ source.name}}</b></h3>
+            
+              
               <img src="{{url_for('static',filename='images/image.jpg')}}" alt="NoImage" style="width:100px;height:100px; float:right">
-            </a>
+            
             <br>
             <div class="well" style="height:200px">
-                <p style="font-weight:bold">{{ source.description|truncate(200)}}</p>
+                <p style="font-weight:bold">{{ source.description}}</p>
+                <button style="float:right; background-color: teal;"><a href="/articles/{{source.id}}"> <b> view {{source.name}}</b></a></button>
             </div>
+            
           </div>
         {% endfor %}
 {% endmacro %}
-{% macro displayArticlesList(articles_list) %}
-        {% for article in article_list %}
+{% macro displayArticlesList(articles) %}
+        {% for article in articles %}
           <div class="col-sm-6">
             <div class="well" style="height:200px">
               <img src="{{article.urlToImage}}" alt="IMAGE NOT FOUND" style="width:150px;height:150px; float:left">
