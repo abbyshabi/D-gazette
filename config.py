@@ -4,10 +4,15 @@ class Config:
     '''
     General configuration parent class
     '''
-    BASE_NEWS_API_URL = "https://newsapi.org/v2/sources?language=en&category={}&apiKey={}"
-    SOURCE_NEWS_URL = "https://newsapi.org/v2/top-headlines?sources={}&apiKey={}"
-    NEWS_API_KEY = os.environ.get('NEWS_API_KEY')
+   
+    HEADLINES_API  = "https://newsapi.org/v2/top-headlines?country=us&country=gb&country=au&apiKey={}"
+    SOURCES_API = "https://newsapi.org/v2/sources?language=en&category={}&apiKey={}"
+    SOURCES_ARTICLE_API = "https://newsapi.org/v2/top-headlines?sources={}&apiKey={}"
+    SEARCH_API = "https://newsapi.org/v2/everything?q={}&apiKey={}"
+    API_KEY = os.environ.get("API_KEY")
+    API_BASE_URL = 'https://newsapi.org/v1/articles?source={}&apiKey={}'
     SECRET_KEY = os.environ.get('SECRET_KEY')
+    NEWS_ARTICLES_API_BASE_URL = 'https://newsapi.org/v2/everything?language=en&sources={}&apiKey={}'
 
 
 
@@ -30,6 +35,7 @@ class DevConfig(Config):
     '''
 
     DEBUG = True
+
 config_options = {
 'development':DevConfig,
 'production':ProdConfig

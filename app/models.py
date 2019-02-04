@@ -1,19 +1,20 @@
 class Sources:
-    '''
-    source class to define source objects
-    '''
-    def __init__(self,source_id,name,description,url,category,country,):
-        self.source_id = id
-        self.name = name 
+    """Sources class to define the news source object"""
+
+    def __init__(self, id, name, description, url, category, language, country):
+        self.id = id
+        self.name = name
         self.description = description
-        self.url = url 
+        self.url = url
         self.category = category
-        self.country = country 
+        self.language = language
+        self.country = country
+
 
 class Articles:
     """Articles class to define the articles object"""
 
-    def __init__(self, id, author, title, description, urlToImage, url, publishedAt):
+    def __init__(self, id, author, title, description, urlToImage, url, date):
 
         self.id = id
         self.author = author
@@ -21,6 +22,4 @@ class Articles:
         self.description = description
         self.urlToImage = urlToImage
         self.url = url
-        self.publishedAt = publishedAt
-
-     
+        self.date = date

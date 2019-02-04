@@ -1,29 +1,25 @@
-from flask import render_template,request,redirect,url_for
+from flask import render_template, request, redirect, url_for
 from . import main
-from ..request import get_sources,get_articles
-from ..models import Sources
-from ..models import Articles
-import json
+from ..request import get_sources, get_articles
+from ..models import Sources,Articles
 
 
-#Articles= article.Articles
-
-# Views
 @main.route('/')
 def index():
-
-    '''
-    The root view for the index page
-    '''
-    title = "Home - Welcome to D-Gazette"
+    """
+    View root page function that returns index page and the various news sources
+    """
+    title = 'Home- Welcome to the best News source page'
+    # Getting the news sources
     news_sources = get_sources('sources')
-    return render_template('index.html',title = title,news_sources = news_sources)
+    return render_template('index.html', title=title, news_sources=news_sources,id = id)
+
 
 @main.route('/articles/<id>')
 def article(id):
     '''
     The view page for the news page
     '''
-    news_args = get_articles(id)
-    highlight_args = 'Route Working!!'
-    return render_template('news.html', highlight_param=highlight_args, news=news_args)
+    article = get_articles(id)
+    return render_template('articles.html', article = article, id = id)
+
