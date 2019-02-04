@@ -29,3 +29,22 @@
           </div>
         {% endfor %}
 {% endmacro %}
+
+
+{% macro display_sources(sources)%}
+    <div class="container">
+        {% for row in sources | batch(3) %}
+        {% for source in row %}
+        <div class="col-sm-4">
+                <h3>{{source.name}}</h3>
+                    <div class="well" style="height:200px">
+                    <p>{{source.description}}</p>
+                    <p>COUNTRY: <strong>{{source.country | upper}}</strong></p>
+                    <button style="float:right; background-color: teal;"><a href="/articles/{{source.id}}"> <b> view {{source.name}}</b></a></button>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+{% endmacro %}

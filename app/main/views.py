@@ -23,3 +23,12 @@ def article(id):
     article = get_articles(id)
     return render_template('articles.html', article = article, id = id)
 
+@main.route("/sources/<category>")
+def sources(category):
+    """
+    View function for the source pages
+    """
+    sources = get_sources(category)
+    title = category.capitalize()
+    header = category.capitalize()
+    return render_template("sources.html",sources = sources,title = title,header = header)

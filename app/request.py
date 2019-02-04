@@ -95,3 +95,22 @@ def process_articles_results(article_list):
             article_results.append(article_object)
 
     return article_results
+
+def get_source(category):
+    """
+    This is a function that will get the sources
+    Return:
+        A list of sources
+    """
+    sources_url = sources_api.format(category,api_key)
+
+    with urllib.request.urlopen(sources_url) as url:
+        sources_data = url.read()
+        sources_response = json.loads(sources_data)
+    
+        sources = None
+        if sources_response["sources"]:
+            sources_list = sources_response["sources"]
+            sources = process_sources(sources_list)
+
+    return sources
