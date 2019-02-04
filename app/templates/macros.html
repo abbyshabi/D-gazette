@@ -5,10 +5,7 @@
         
           <div class="col-sm-4">
               <h3 ><b>{{ source.name}}</b></h3>
-            
-              
               <img src="{{url_for('static',filename='images/image.jpg')}}" alt="NoImage" style="width:100px;height:100px; float:right">
-            
             <br>
             <div class="well" style="height:200px">
                 <p style="font-weight:bold">{{ source.description}}</p>
@@ -24,10 +21,10 @@
             <div class="well" style="height:200px">
               <img src="{{article.urlToImage}}" alt="IMAGE NOT FOUND" style="width:150px;height:150px; float:left">
               <h3 style="margin-top:-10px">{{article.title}}</h3>
-              <p style="margin-left:50px">{{ article.description|truncate(100)}}</p>
-              <a href="{{article.url}}"><p>Continue reading.........</p></a>
+              <p style="margin-left:50px">{{ article.description}}</p>
+              <a href="{{article.url}}"><p>View more.......</p></a>
               <br>
-              <footer style="font-weight:bolder">Published: {{article.date}}</footer>
+              <footer style="font-weight:bolder; float:right;">Published: {{article.date}}</footer>
             </div>
           </div>
         {% endfor %}
