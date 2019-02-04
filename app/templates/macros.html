@@ -22,9 +22,9 @@
               <img src="{{article.urlToImage}}" alt="IMAGE NOT FOUND" style="width:150px;height:150px; float:left">
               <h3 style="margin-top:-10px">{{article.title}}</h3>
               <p style="margin-left:50px">{{ article.description}}</p>
-              <a href="{{article.url}}"><p>View more.......</p></a>
-              <br>
+              <a style="float:right; "href="{{article.url}}"><p><b><i> View more.......</i></b></p></a><br>
               <footer style="font-weight:bolder; float:right;">Published: {{article.date}}</footer>
+              
             </div>
           </div>
         {% endfor %}
