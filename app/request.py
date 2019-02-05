@@ -102,7 +102,7 @@ def get_source(category):
     Return:
         A list of sources
     """
-    sources_url = sources_api.format(category,api_key)
+    sources_url = "https://newsapi.org/v2/sources?language=en&category={}&apiKey={}".format(category,api_key)
 
     with urllib.request.urlopen(sources_url) as url:
         sources_data = url.read()
