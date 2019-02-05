@@ -7,7 +7,7 @@ DeeGazette is a simple python application that allows user view various news sou
 * Access github on a web browser
 * clone this repository  from https://github.com/abbyshabi/D-gazette
 * Navigate to the cloned project file on your terminal
-* Run python3.6 run.py code in the terminal to launch the application
+* Run ./start.sh code in the terminal to launch the application
 ## Testing the Application
 * To run tests for the class files:
   * $ python3.6 article_test.py
@@ -24,6 +24,9 @@ DeeGazette is a simple python application that allows user view various news sou
 There are no known bugs for this application
 ## Technologies Used
 * Python3.6
+* Html
+* CSS
+* Flask
 
 ## Support and contact details
 If you have any questions, please feel free to contact me at abbyshabi@gmail.com. You are welcome to make contributions and corrections as needed.
