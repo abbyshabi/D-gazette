@@ -9,10 +9,10 @@ class Config:
     SOURCES_API = "https://newsapi.org/v2/sources?language=en&category={}&apiKey={}"
     SOURCES_ARTICLE_API = "https://newsapi.org/v2/top-headlines?sources={}&apiKey={}"
     SEARCH_API = "https://newsapi.org/v2/everything?q={}&apiKey={}"
-    API_KEY = os.environ.get("API_KEY")
     API_BASE_URL = 'https://newsapi.org/v1/articles?source={}&apiKey={}'
-    SECRET_KEY = os.environ.get('SECRET_KEY')
     NEWS_ARTICLES_API_BASE_URL = 'https://newsapi.org/v2/everything?language=en&sources={}&apiKey={}'
+    API_KEY = os.environ.get("API_KEY")
+    SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 
