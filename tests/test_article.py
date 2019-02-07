@@ -10,7 +10,7 @@ class ArticleTest(unittest.TestCase):
         '''
         set up method that will run before every test 
         '''
-        self.new_article = Articles(12,'abc','abcdef','ab@ab.com','abc','au','utl@ue.com')
+        self.new_article = Articles(1,'abc','abcdef','ab@ab.com','abc','au','utl@ue.com')
 
     def test_instance(self):
         self.assertTrue(isinstance(self.new_article,Articles))
